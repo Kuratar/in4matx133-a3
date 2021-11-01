@@ -13,7 +13,7 @@ import { TrackFeature } from '../data/track-feature';
 export class SpotifyService {
 	expressBaseUrl:string = 'http://localhost:8888';
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient) { }
 
   private sendRequestToExpress(endpoint:string):Promise<any> {
     //TODO: use the injected http Service to make a get request to the Express endpoint and return the response.
