@@ -28,6 +28,7 @@ export class SearchComponent implements OnInit {
     .then(
       resourceData => {
         this.resources = resourceData;
+        console.log(this.resources);
       });
   }
 
