@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
   resources:ResourceData[];
+  searchedCategory:string = null;
 
   constructor(private spotifyService:SpotifyService) { }
 
@@ -28,7 +29,7 @@ export class SearchComponent implements OnInit {
     .then(
       resourceData => {
         this.resources = resourceData;
-        console.log(this.resources);
+        this.searchedCategory = this.searchCategory;
       });
   }
 
