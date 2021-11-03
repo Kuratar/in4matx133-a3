@@ -30,6 +30,7 @@ export class SearchComponent implements OnInit {
       resourceData => {
         this.resources = resourceData;
         this.searchedCategory = this.searchCategory;
+        console.log(this.resources)
       });
   }
 
