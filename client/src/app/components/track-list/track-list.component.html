@@ -22,7 +22,9 @@
 			<!--TODO: display the track's duration-->
 			<td>{{ track.duration_ms }}</td>
 			<!--TODO: Use *ngIf to hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name-->
-			<td *ngIf="!hideArtist"><a [href]="track.artists[0].url">{{ track.artists[0].name }}</a></td>
+			<!-- https://stackoverflow.com/questions/37078494/dynamic-routerlink-value-from-ngfor-item-giving-error-got-interpolation -->
+			<!-- ANGULAR DOES NOT ALLOW [] WITH {{}} -->
+			<td *ngIf="!hideArtist"><a routerLink="/artist/{{ track.artists[0].id }}">{{ track.artists[0].name }}</a></td>
 			<!--TODO: Use *ngIf to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
 			<td *ngIf="!hideAlbum"><a [href]="track.album.url">{{ track.album.name }}</a></td>
 		</tr>
