@@ -23,6 +23,7 @@ aton4@uci.edu, ericdn4@uci.edu
     https://developer.spotify.com/documentation/web-api/reference/#/
     https://stackoverflow.com/questions/37078494/dynamic-routerlink-value-from-ngfor-item-giving-error-got-interpolation
     https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop
+    https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
 
@@ -35,4 +36,7 @@ aton4@uci.edu, ericdn4@uci.edu
 
 6. Is there anything special we need to know in order to run your code?
 
-    No.
+    Run npm install in client and webserver folder.
+    npm start for webserver.
+    ng serve --open for client.
+    As per assignment instructions.
