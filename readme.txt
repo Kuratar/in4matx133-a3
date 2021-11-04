@@ -1,7 +1,7 @@
 --Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
 Andrew Ton, Eric Nguyen
-asdasdasd, ericdn4@uci.edu
-123456789, 40352816
+aton4@uci.edu, ericdn4@uci.edu
+23219061, 40352816
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
