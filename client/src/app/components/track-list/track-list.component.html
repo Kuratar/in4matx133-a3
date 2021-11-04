@@ -26,7 +26,7 @@
 			<!-- ANGULAR DOES NOT ALLOW [] WITH {{}} -->
 			<td *ngIf="!hideArtist"><a routerLink="/artist/{{ track.artists[0].id }}">{{ track.artists[0].name }}</a></td>
 			<!--TODO: Use *ngIf to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
-			<td *ngIf="!hideAlbum"><a [href]="track.album.url">{{ track.album.name }}</a></td>
+			<td *ngIf="!hideAlbum"><a routerLink="/album/{{ track.album.id }}">{{ track.album.name }}</a></td>
 		</tr>
 	</tbody>
 </table>
