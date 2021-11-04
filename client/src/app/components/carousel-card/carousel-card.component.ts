@@ -11,6 +11,7 @@ export class CarouselCardComponent implements OnInit {
   @Input() info: string;
   @Input() songImageURL: string;
   @Input() url: string;
+  @Input() category:string;
 
   constructor() {}
 
@@ -18,5 +19,6 @@ export class CarouselCardComponent implements OnInit {
     this.info = this.resource.name;
     this.songImageURL = this.resource.imageURL;
     this.url = this.resource.url;
+    console.log(this.resource);
   }
 }
