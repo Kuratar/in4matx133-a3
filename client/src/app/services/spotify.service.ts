@@ -121,6 +121,18 @@ export class SpotifyService {
 
   getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
     //TODO: use the audio features for track endpoint to make a request to express.
-    return null;
+    return this.sendRequestToExpress(`/track-audio-features/${encodeURIComponent(trackId)}`)
+    .then((data) => {
+      const featureArray:TrackFeature[] = [];
+      // const acousticness:TrackFeature = new TrackFeature("acousticness", data.acousticness);
+      for (const featureType of TrackFeature.FeatureTypes) {
+        if (data[featureType]) {
+          const feature:TrackFeature = new TrackFeature(featureType, data[featureType]);
+          featureArray.push(feature);
+        }
+      }
+      console.log(featureArray);
+      return featureArray;
+    });
   }
 }
