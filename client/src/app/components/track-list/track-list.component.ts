@@ -8,13 +8,19 @@ import convertTime from "../../../utils/convertTime";
   styleUrls: ["./track-list.component.css"],
 })
 export class TrackListComponent implements OnInit {
+  @Input() gest:any;
   @Input() tracks: TrackData[];
   @Input() hideArtist: boolean = false;
   @Input() hideAlbum: boolean = false;
   time: string;
   convertFunction: Function = convertTime;
+  selectedIndex: number = 1;
 
-  constructor() {}
+  constructor() {
+    console.log("init")
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("changed")
+  }
 }

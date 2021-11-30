@@ -1,3 +1,4 @@
+<div [innerHTML]="gest"></div>
 <table class="table table-sm table-light table-striped" *ngIf="tracks">
 	<thead>
 		<tr>
@@ -15,7 +16,11 @@
 		<tr *ngFor="let track of tracks;index as ind">
 			<!--TODO: Populate with row index (start with 1!)-->
 			<td>{{ ind + 1 }}</td>
-			<td>
+			<td id="highlightedEntry" *ngIf="selectedIndex === ind + 1">
+				<!--TODO: link to the endpoint for that track, display the track's name-->
+				<a routerLink="/track/{{ track.id }}">{{ track.name }}</a>
+			</td>
+			<td *ngIf="selectedIndex !== ind + 1">
 				<!--TODO: link to the endpoint for that track, display the track's name-->
 				<a routerLink="/track/{{ track.id }}">{{ track.name }}</a>
 			</td>

@@ -1,3 +1,9 @@
 table {
 	color: var(--dark);
 }
+
+#highlightedEntry {
+	border-color: aqua;
+	color: blue;
+	border-width: 5rem;
+}

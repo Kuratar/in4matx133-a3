@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ArtistData } from '../../data/artist-data';
 import { AlbumData } from '../../data/album-data';
@@ -12,6 +12,7 @@ import { ResourceData } from '../../data/resource-data';
   providers: [ SpotifyService ]
 })
 export class SearchComponent implements OnInit {
+  @Input() gest:any;
   searchString:string;
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];

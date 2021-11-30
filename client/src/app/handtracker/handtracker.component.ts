@@ -88,7 +88,7 @@ export class HandtrackerComponent implements OnInit {
             let pinching = 0;
             for(let p of predictions){
                 //uncomment to view label and position data
-                console.log(p.label + " at X: " + p.bbox[0] + ", Y: " + p.bbox[1] + " at X: " + p.bbox[2] + ", Y: " + p.bbox[3]);
+                // console.log(p.label + " at X: " + p.bbox[0] + ", Y: " + p.bbox[1] + " at X: " + p.bbox[2] + ", Y: " + p.bbox[3]);
                 
                 if(p.label == 'open') openhands++;
                 if(p.label == 'closed') closedhands++;
@@ -117,7 +117,7 @@ export class HandtrackerComponent implements OnInit {
 
             if (openhands == 0 && closedhands == 0 && pointing == 0 && pinching == 0)
                 this.detectedGesture = "None";
-            console.log(this.detectedGesture)
+            // console.log(this.detectedGesture)
             this.onPrediction.emit(new PredictionEvent(this.detectedGesture))
         }, (err: any) => {
             console.log("ERROR")
