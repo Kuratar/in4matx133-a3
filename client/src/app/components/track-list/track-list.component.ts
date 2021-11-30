@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, OnChanges, Input, SimpleChanges } from "@angular/core";
 import { TrackData } from "../../data/track-data";
 import convertTime from "../../../utils/convertTime";
 
@@ -8,7 +8,8 @@ import convertTime from "../../../utils/convertTime";
   styleUrls: ["./track-list.component.css"],
 })
 export class TrackListComponent implements OnInit {
-  @Input() gest:any;
+  @Input() gest: any;
+  @Input() counter: number;
   @Input() tracks: TrackData[];
   @Input() hideArtist: boolean = false;
   @Input() hideAlbum: boolean = false;
@@ -17,10 +18,29 @@ export class TrackListComponent implements OnInit {
   selectedIndex: number = 1;
 
   constructor() {
-    console.log("init")
+    console.log("init");
   }
 
   ngOnInit() {
-    console.log("changed")
+    console.log("changed");
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(this.gest);
+    console.log(this.counter);
+    if (this.gest === "Two Open Hands") {
+      if (this.selectedIndex > 1) {
+        this.selectedIndex -= 1;
+      }
+    } else if (this.gest === "Two Closed Hands") {
+      if (this.selectedIndex < this.tracks.length) {
+        this.selectedIndex += 1;
+      }
+    }
+    else if (this.gest === "Open Hand") {
+      const track:TrackData = this.tracks[this.selectedIndex-1];
+      window.location.href = `/track/${track.id}`;
+      // window.history.pushState("","",`/track/${track.id}`);
+    }
   }
 }

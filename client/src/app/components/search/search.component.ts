@@ -13,6 +13,7 @@ import { ResourceData } from '../../data/resource-data';
 })
 export class SearchComponent implements OnInit {
   @Input() gest:any;
+  @Input() counter:number;
   searchString:string;
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];

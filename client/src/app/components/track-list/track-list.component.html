@@ -1,4 +1,4 @@
-<div [innerHTML]="gest"></div>
+<div [gest]="gest" [counter]="counter" (onChange)="ngOnChanges()"></div>
 <table class="table table-sm table-light table-striped" *ngIf="tracks">
 	<thead>
 		<tr>

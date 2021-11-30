@@ -3,7 +3,5 @@ table {
 }
 
 #highlightedEntry {
-	border-color: aqua;
-	color: blue;
-	border-width: 5rem;
+	background-color: aqua;
 }

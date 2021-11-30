@@ -8,6 +8,7 @@ import { PredictionEvent } from '../../prediction-event';
 })
 export class HomePageComponent implements OnInit {
   gesture: String = "";
+  counter: number = 0;
 
   constructor() { }
 
@@ -16,6 +17,9 @@ export class HomePageComponent implements OnInit {
 
   prediction(event: PredictionEvent){
     this.gesture = event.getPrediction();
+    console.log("home-page "+ this.gesture);
+    this.counter += 1;
+    if (this.counter > 100) this.counter = 0;
   }
 
 }
