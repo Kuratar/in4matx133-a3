@@ -5,3 +5,7 @@
 app-artist {
 	vertical-align: middle;
 }
+
+#gesture {
+	display: none;
+}

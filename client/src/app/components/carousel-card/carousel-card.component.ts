@@ -19,6 +19,5 @@ export class CarouselCardComponent implements OnInit {
     this.info = this.resource.name;
     this.songImageURL = this.resource.imageURL;
     this.url = this.resource.url;
-    console.log(this.resource);
   }
 }

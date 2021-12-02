@@ -22,7 +22,7 @@
 		<!--TODO: display artist name-->
 		<h3>{{artist.name}}'s Top Tracks</h3>
 		<!--TODO: display the artist's top tracks-->
-		<app-track-list [tracks]="topTracks"></app-track-list>
+		<app-track-list [tracks]="topTracks" [gest]="gesture"></app-track-list>
 	</div>
 </div>
 
@@ -39,4 +39,9 @@
 		<app-carousel carouselId="relatedartistscarousel" [resources]="relatedArtists"></app-carousel>
 	</div>
 
+</div>
+
+<div id="tracker">
+	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<div [innerHTML]="gesture"></div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PredictionEvent } from '../../prediction-event';
+import { HandtrackerComponent } from 'src/app/handtracker/handtracker.component';
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +10,7 @@ import { PredictionEvent } from '../../prediction-event';
 export class HomePageComponent implements OnInit {
   gesture: String = "";
   counter: number = 0;
+  @ViewChild(HandtrackerComponent) video: any;
 
   constructor() { }
 

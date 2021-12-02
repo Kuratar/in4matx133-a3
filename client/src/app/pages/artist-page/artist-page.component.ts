@@ -4,6 +4,7 @@ import { ArtistData } from "../../data/artist-data";
 import { TrackData } from "../../data/track-data";
 import { AlbumData } from "../../data/album-data";
 import { SpotifyService } from "../../services/spotify.service";
+import { PredictionEvent } from "src/app/prediction-event";
 
 @Component({
   selector: "app-artist-page",
@@ -16,6 +17,8 @@ export class ArtistPageComponent implements OnInit {
   relatedArtists: ArtistData[];
   topTracks: TrackData[];
   albums: AlbumData[];
+  gesture: String = "";
+  counter: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,5 +50,12 @@ export class ArtistPageComponent implements OnInit {
     .then((albumsData) => {
       this.albums = albumsData;
     });
+  }
+
+  prediction(event: PredictionEvent){
+    this.gesture = event.getPrediction();
+    console.log("home-page "+ this.gesture);
+    this.counter += 1;
+    if (this.counter > 100) this.counter = 0;
   }
 }

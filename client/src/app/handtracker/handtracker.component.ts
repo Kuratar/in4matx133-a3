@@ -107,7 +107,7 @@ export class HandtrackerComponent implements OnInit {
             if (pointing > 1) this.detectedGesture = "Two Hands Pointing"; // forward
             else if(pointing == 1) this.detectedGesture = "Hand Pointing"; // back
             
-            if (pinching > 1) this.detectedGesture = "Two Hands Pinching";
+            if (pinching > 1) this.detectedGesture = "Two Hands Pinching"; 
             else if(pinching == 1) this.detectedGesture = "Hand Pinching";
             
             // left

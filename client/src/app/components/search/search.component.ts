@@ -14,6 +14,7 @@ import { ResourceData } from '../../data/resource-data';
 export class SearchComponent implements OnInit {
   @Input() gest:any;
   @Input() counter:number;
+  @Input() video:any;
   searchString:string;
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
