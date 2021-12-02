@@ -5,3 +5,7 @@ table {
 #highlightedEntry {
 	background-color: aqua;
 }
+
+#gesture {
+	display: none;
+}

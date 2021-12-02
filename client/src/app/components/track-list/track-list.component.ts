@@ -25,7 +25,7 @@ export class TrackListComponent implements OnInit {
     console.log("changed");
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     console.log(this.gest);
     console.log(this.counter);
     if (this.gest === "Two Open Hands") {
@@ -38,9 +38,10 @@ export class TrackListComponent implements OnInit {
       }
     }
     else if (this.gest === "Open Hand") {
+      console.log("here")
       const track:TrackData = this.tracks[this.selectedIndex-1];
-      window.location.href = `/track/${track.id}`;
-      // window.history.pushState("","",`/track/${track.id}`);
+      window.open(`http://localhost:4200/track/${track.id}`, "_blank")
+      // window.location.href = `/track/${track.id}`;
     }
   }
 }
