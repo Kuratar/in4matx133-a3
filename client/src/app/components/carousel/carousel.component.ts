@@ -33,12 +33,16 @@ export class CarouselComponent implements OnInit {
     if (this.gest === "One Hand Open One Hand Closed") {
       if (this.selectedIndex > 1) {
         this.selectedIndex -= 1;
+        console.log("prev");
         (<any>$('.carousel') ).carousel("prev");
+        // (<any>$(`${this.carouselId}`) ).carousel("prev");
       }
     } else if (this.gest === "One Hand Open One Hand Pointing") {
       if (this.selectedIndex < this.resources.length) {
         this.selectedIndex += 1;
+        console.log("next");
         (<any>$('.carousel') ).carousel("next");
+        // (<any>$(`#${this.carouselId}`) ).carousel("next");
       }
     } else if (this.gest === "Hand Pinching") {
       const resource: ResourceData = this.resources[this.selectedIndex - 1];

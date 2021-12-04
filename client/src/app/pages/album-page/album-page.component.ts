@@ -43,7 +43,7 @@ export class AlbumPageComponent implements OnInit {
 
   prediction(event: PredictionEvent){
     this.gesture = event.getPrediction();
-    console.log("home-page "+ this.gesture);
+    console.log("album-page "+ this.gesture);
     this.counter += 1;
     if (this.counter > 100) this.counter = 0;
   }
