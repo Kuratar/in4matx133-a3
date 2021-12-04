@@ -40,7 +40,7 @@ export class CarouselComponent implements OnInit {
         this.selectedIndex += 1;
         (<any>$('.carousel') ).carousel("next");
       }
-    } else if (this.gest === "Open Hand") {
+    } else if (this.gest === "Hand Pinching") {
       const resource: ResourceData = this.resources[this.selectedIndex - 1];
       window.open(
         `http://localhost:4200/${resource.category}/${resource.id}`,

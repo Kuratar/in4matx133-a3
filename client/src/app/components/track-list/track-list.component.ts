@@ -36,7 +36,7 @@ export class TrackListComponent implements OnInit {
         this.selectedIndex += 1;
       }
     }
-    else if (this.gest === "Open Hand") {
+    else if (this.gest === "Hand Pinching") {
       console.log("here")
       const track:TrackData = this.tracks[this.selectedIndex-1];
       window.open(`http://localhost:4200/track/${track.id}`, "_blank")
