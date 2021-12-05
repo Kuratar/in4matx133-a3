@@ -27,21 +27,23 @@ export class TrackListComponent implements OnInit {
   ngOnChanges() {
     console.log(this.gest);
     console.log(this.counter);
-    if (this.gest === "Two Open Hands") {
-      if (this.selectedIndex > 1) {
-        this.selectedIndex -= 1;
+    if (this.tracks){
+      if (this.gest === "Two Open Hands") {
+        if (this.selectedIndex > 1) {
+          this.selectedIndex -= 1;
+        }
+      } else if (this.gest === "Two Closed Hands") {
+        if (this.selectedIndex < this.tracks.length) {
+          this.selectedIndex += 1;
+        }
       }
-    } else if (this.gest === "Two Closed Hands") {
-      if (this.selectedIndex < this.tracks.length) {
-        this.selectedIndex += 1;
-      }
-    }
-    else if (this.gest === "Hand Pinching") {
-      console.log("here")
-      const track:TrackData = this.tracks[this.selectedIndex-1];
-      window.open(`http://localhost:4200/track/${track.id}`, "_blank")
-      if (this.video) {
-        this.video.stopDetection();
+      else if (this.gest === "Hand Pinching") {
+        console.log("here")
+        const track:TrackData = this.tracks[this.selectedIndex-1];
+        window.open(`http://localhost:4200/track/${track.id}`, "_blank")
+        if (this.video) {
+          this.video.stopDetection();
+        }
       }
     }
   }

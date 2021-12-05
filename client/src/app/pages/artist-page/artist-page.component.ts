@@ -59,7 +59,7 @@ export class ArtistPageComponent implements OnInit {
     console.log("artist-page "+ this.gesture);
     this.counter += 1;
     if (this.counter > 100) this.counter = 0;
-    if (this.gesture === "Two Hands Pinching" || "Two Hands Pointing") {
+    if (this.gesture === "Two Hands Pinching" || this.gesture === "Two Hands Pointing") {
       this.video.stopDetection();
       if (this.gesture === "Two Hands Pointing") {
         window.close();
