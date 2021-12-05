@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ArtistData } from "../../data/artist-data";
 import { TrackData } from "../../data/track-data";
@@ -6,6 +6,8 @@ import { AlbumData } from "../../data/album-data";
 import { TrackFeature } from "../../data/track-feature";
 import { SpotifyService } from "../../services/spotify.service";
 import convertTime from "../../../utils/convertTime";
+import { HandtrackerComponent } from "src/app/handtracker/handtracker.component";
+import { PredictionEvent } from "src/app/prediction-event";
 
 @Component({
   selector: "app-track-page",
@@ -17,6 +19,9 @@ export class TrackPageComponent implements OnInit {
   track: TrackData;
   audioFeatures: TrackFeature[];
   time: string;
+  gesture: String = "";
+  counter: number = 0;
+  @ViewChild(HandtrackerComponent) video: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,4 +48,16 @@ export class TrackPageComponent implements OnInit {
   //   const seconds = ((ms % 60000) / 1000).toFixed(0);
   //   return minutes + ":" + (Number(seconds) < 10 ? "0" : "") + seconds;
   // }
+  prediction(event: PredictionEvent){
+    this.gesture = event.getPrediction();
+    console.log("artist-page "+ this.gesture);
+    this.counter += 1;
+    if (this.counter > 100) this.counter = 0;
+    if (this.gesture === "Two Hands Pinching" || "Two Hands Pointing") {
+      this.video.stopDetection();
+      if (this.gesture === "Two Hands Pointing") {
+        window.close();
+      }
+    }
+  }
 }

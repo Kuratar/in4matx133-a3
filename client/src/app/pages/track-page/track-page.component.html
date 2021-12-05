@@ -27,3 +27,7 @@
 		<app-thermometer *ngFor="let feature of audioFeatures" [feature]="feature"></app-thermometer>
 	</div>
 </div>
+<div id="tracker">
+	<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+	<div [innerHTML]="gesture"></div>
+</div>

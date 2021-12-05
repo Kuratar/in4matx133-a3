@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistData } from '../../data/artist-data';
 import { TrackData } from '../../data/track-data';
 import { AlbumData } from '../../data/album-data';
 import { SpotifyService } from "../../services/spotify.service";
 import { PredictionEvent } from 'src/app/prediction-event';
+import { HandtrackerComponent } from 'src/app/handtracker/handtracker.component';
 
 @Component({
   selector: 'app-album-page',
@@ -17,6 +18,7 @@ export class AlbumPageComponent implements OnInit {
 	tracks:TrackData[];
   gesture: String = "";
   counter: number = 0;
+  @ViewChild(HandtrackerComponent) video: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,5 +48,11 @@ export class AlbumPageComponent implements OnInit {
     console.log("album-page "+ this.gesture);
     this.counter += 1;
     if (this.counter > 100) this.counter = 0;
+    if (this.gesture === "Two Hands Pinching" || "Two Hands Pointing") {
+      this.video.stopDetection();
+      if (this.gesture === "Two Hands Pointing") {
+        window.close();
+      }
+    }
   }
 }

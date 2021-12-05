@@ -104,10 +104,10 @@ export class HandtrackerComponent implements OnInit {
             if (closedhands > 1) this.detectedGesture = "Two Closed Hands"; // down
             else if(closedhands == 1) this.detectedGesture = "Closed Hand"; 
             
-            if (pointing > 1) this.detectedGesture = "Two Hands Pointing";
+            if (pointing > 1) this.detectedGesture = "Two Hands Pointing"; // close browser tab
             else if(pointing == 1) this.detectedGesture = "Hand Pointing"; 
             
-            if (pinching > 1) this.detectedGesture = "Two Hands Pinching"; 
+            if (pinching > 1) this.detectedGesture = "Two Hands Pinching"; // stop video
             else if(pinching == 1) this.detectedGesture = "Hand Pinching"; // go to link
             
             // left
